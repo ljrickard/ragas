@@ -1,3 +1,3 @@
-module github.com/your-github-username/ragas-go
+module github.com/ljrickard/ragas
 
 go 1.26.1
