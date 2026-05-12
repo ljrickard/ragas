@@ -1,11 +1,11 @@
-# ragas-go 🎯
+# ragas 🎯
 
 A lightweight, fully decoupled Go library for evaluating Retrieval-Augmented Generation (RAG) pipelines using the "LLM-as-a-judge" pattern. 
 
 Inspired by the popular Python `ragas` framework, this package brings quantitative RAG evaluation natively to Go backend services, allowing you to integrate AI quality checks directly into your CI/CD pipelines or Go test suites.
 
 ## Overview
-Testing non-deterministic AI systems is notoriously difficult. Traditional unit tests fail when outputs are dynamically generated. `ragas-go` solves this by using a stronger LLM to grade your pipeline's outputs against a known ground truth, scoring them mathematically from `0.0` to `1.0`.
+Testing non-deterministic AI systems is notoriously difficult. Traditional unit tests fail when outputs are dynamically generated. `ragas` solves this by using a stronger LLM to grade your pipeline's outputs against a known ground truth, scoring them mathematically from `0.0` to `1.0`.
 
 This library isolates the **evaluation logic** from the **LLM provider**, allowing you to plug in any model (OpenAI, Gemini, Anthropic, or local models via Ollama) to act as the judge.
 
@@ -31,7 +31,7 @@ go get github.com/ljrickard/ragas@v0.1.2
 ## 🛠️ Usage & Architecture
 
 ### 1. The Interface Design
-To maintain a clean architecture, `ragas-go` does not hardcode any specific LLM SDKs. Instead, it relies on a simple interface. You just need to pass it a client that knows how to turn a prompt string into a response string:
+To maintain a clean architecture, `ragas` does not hardcode any specific LLM SDKs. Instead, it relies on a simple interface. You just need to pass it a client that knows how to turn a prompt string into a response string:
 
 ```go
 // The only interface you need to satisfy
